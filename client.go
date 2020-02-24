@@ -9,8 +9,6 @@ import (
 	"errors"
 	"io/ioutil"
 	"net/http"
-	// "net/url"
-	// "strconv"
 	"strings"
 )
 
@@ -84,7 +82,7 @@ func Base64_Encode(src string) string {
 
 //----------------------------------------Sender----------------------------------------//
 // 发送模板短信到手机
-func (r *Req) SendTmpMessage(params string) (*Result, error) {
+func (r *Req) SendTmpMessage() (*Result, error) {
 	res, err := r.doPost(r.host+TmpURL, []byte(r.params))
 	if err != nil {
 		return nil, err
